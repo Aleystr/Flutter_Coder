@@ -110,9 +110,19 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         backgroundColor: Colors.indigo,
         actions: <Widget> [
+          if (isLandScape)
+            IconButton(
+              icon: Icon(_showChart ? Icons.list : Icons.pie_chart),
+              onPressed: () {
+                setState(() {
+                  _showChart = !_showChart;
+                });
+              },
+            ),
           IconButton(
             onPressed: () => _openTransactionFormModal(context),
-            icon: Icon(Icons.add_circle_sharp))
+            icon: Icon(Icons.add_circle_sharp)
+          ),
         ],
       );
  
