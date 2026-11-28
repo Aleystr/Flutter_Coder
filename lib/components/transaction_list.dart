@@ -60,7 +60,13 @@ TransactionList(this.transactions, this.onRemove);
           subtitle: Text(
             DateFormat('d MMM y').format(tr.date),
           ),
-          trailing: IconButton(
+          trailing: MediaQuery.of(context).size.width > 400 
+          ? TextButton.icon(
+            onPressed: () => onRemove(tr.id),
+            icon: Icon(Icons.delete_forever_sharp),
+            label: Text('Excluir'),
+          )
+          : IconButton(
             icon: Icon(Icons.delete),
             onPressed: () => onRemove(tr.id), 
             color: Colors.red,

@@ -152,12 +152,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             if (_showChart || !isLandScape)
               Container(
-              height: avaibleHeight * (isLandScape ? 0.7 : 0.3),
+              height: avaibleHeight * (isLandScape ? 0.8 : 0.3),
               child: Chart(_recentTransactions),
             ),
             if(!_showChart || !isLandScape)
               Container(
-              height: avaibleHeight * 0.7,
+              height: avaibleHeight * (isLandScape ? 1 : 0.7),
               child: TransactionList(_transactions, _removeTransaction),
             ),
           ],
